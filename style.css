@@ -1,0 +1,287 @@
+:root {
+  --neon-green: hsl(127, 100%, 82%);
+  --red: hsl(0, 91%, 63%);
+  --orange: hsl(13, 95%, 66%);
+  --yellow: hsl(42, 91%, 68%);
+
+  --very-dark-grey: hsl(248, 15%, 11%);
+  --grey: hsl(251, 9%, 53%);
+  --dark-grey: hsl(248, 10%, 15%);
+  --almost-white: hsl(252, 11%, 91%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-dark-grey);
+  color: var(--almost-white);
+  font-family: "JetBrains Mono", monospace;
+  padding: 0 16px;
+  color: var(--almost-white);
+  display: flex;
+  justify-content: center;
+}
+
+button,
+input {
+  font-family: "JetBrains Mono", monospace;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1rem;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  color: grey;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 540px;
+}
+
+section {
+  background-color: var(--dark-grey);
+  display: flex;
+  padding: 16px;
+}
+
+#passwordDisplay,
+#copyBtn {
+  background: none;
+  border: none;
+}
+
+#passwordDisplay {
+    color: var(--almost-white);
+    font-size: 1.5rem;
+}
+
+#passwordDisplay:focus {
+    outline: none;;
+}
+
+#copyBtn{
+    fill: var(--neon-green);
+    color: var(--neon-green);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#copyBtn:hover{
+    fill: var(--almost-white); }
+
+.display-container {
+  height: 56px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.slider {
+    height: 67px;
+}
+
+.container {
+  flex-direction: column;
+  gap: 32px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 2px solid var(--almost-white);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--neon-green);
+  border: none;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-image: url("assets/images/icon-check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.option {
+  display: flex;
+  gap: 20px;
+}
+
+#generateBtn {
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--neon-green);
+  fill: var(--very-dark-grey);
+}
+
+#generateBtn:hover {
+  color: var(--neon-green);
+  background: none;
+  border: 2px solid var(--neon-green);
+  fill: var(--neon-green)
+}
+
+.strength-container {
+    height: 56px;
+    background-color: #18171F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    color: grey;
+}
+
+.strength-bar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.strength-bar div {
+    height: 28px;
+    width: 10px;
+}
+
+#strengthText {
+    margin-right: 8px;
+}
+
+
+.bar {
+    border: 2px solid var(--almost-white);
+}
+
+.too-weak {
+    background-color: var(--red);
+}
+
+.weak {
+    background-color: var(--orange);
+}
+
+.medium {
+    background-color: var(--yellow);
+}
+
+.strong {
+    background-color: var(--neon-green);
+}
+
+#length {
+    background: linear-gradient(to right, var(--neon-green) 0%, var(--neon-green)  50%, var(--almost-white) 50%, var(--almost-white) 100%);
+    border: none;
+    height: 8px;
+    width: 100%;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range']::-webkit-slider-thumb {
+      width: 28px;
+      -webkit-appearance: none;
+      height: 28px;
+      border-radius: 14px;
+      cursor: pointer;
+      background: var(--almost-white);
+    }
+}
+
+.flexing {
+    display:flex;
+    justify-content: space-between;
+    height: 32px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+#lengthVal {
+    color: var(--neon-green);
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+@media (min-width: 30rem) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  #generateBtn {
+    font-size: 1.125rem;
+    gap: 24px;
+  }
+
+  h1 {
+    margin-top: 132px;
+    margin-bottom: 32px;
+    font-size: 1.5rem;;
+  }
+
+  .display-container {
+    height: 80px;
+    margin-bottom: 24px;
+    padding: 16px 32px;
+  }
+
+  .container {
+    padding: 32px;
+  }
+
+  #generateBtn {
+    height: 64px;
+  }
+
+  .strength-container {
+    height: 72px;
+    padding: 16px 32px;
+  }
+
+  #passwordDisplay {
+    font-size: 2rem;
+  }
+
+  .slider {
+    height: 87px;
+}
+#lengthVal {
+    font-size: 2rem;
+}
+    .flexing {
+        margin-bottom: 16px;;
+    }
+}
